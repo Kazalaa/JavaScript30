@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <h1>Welcome to the Drum Kit Challenge</h1>
 
   <div class="keys">
     <div data-key="65" class="key">
@@ -59,6 +59,24 @@
 
 <script>
 
+  function removeTransition(e) {
+    if(e.propertyName !== 'transform') return; //skip if it's not a transform
+    this.classList.remove('playing');
+  }
+
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+    if (!audio) return; // If no audio
+    audio.currentTime = 0; // To play again the audio without waiting the end of the sound.
+    audio.play();
+    key.classList.add("playing");
+  }
+
+  const keys = document.querySelectorAll('.key')
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+  window.addEventListener('keydown', playSound)
 </script>
 
 

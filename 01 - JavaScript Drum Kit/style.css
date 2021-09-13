@@ -1,6 +1,7 @@
 html {
   font-size: 10px;
-  background: url('./background.jpg') bottom center;
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('./drummer.jpg');
+  /* background: url('./drummer.jpg') bottom center; */
   background-size: cover;
 }
 
@@ -9,11 +10,18 @@ body,html {
   padding: 0;
   font-family: sans-serif;
 }
-
+h1{
+  color: white;
+  text-align: center;
+  font-size: 56px;
+  font-weight: bold;
+  margin-top: 100px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 60vh;
   align-items: center;
   justify-content: center;
 }
