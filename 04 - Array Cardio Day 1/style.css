@@ -1,0 +1,15 @@
+body {
+  text-align: center;
+  font-weight: 100;
+  font-size: 40px;
+  color: white;
+  background-color: #022F40;
+}
+
+p{
+  margin: 20px;
+}
+
+img{
+  height: 79vh;
+}
