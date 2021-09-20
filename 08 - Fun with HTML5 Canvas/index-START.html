@@ -3,17 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>HTML5 Canvas</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="draw" width="800" height="800"></canvas>
-<script>
-</script>
+  <div class="grid">
+    <div id="advice">Click and drag to draw</div>
+    <div class="controls">
+      <div class="container">
+        <button id="btn-color-dodge" class="button flex active" value="color-dodge"> Color dodge </button>
+        <button id="btn-copy"  class="button flex" value="copy"> Copy </button>
+        <button id="btn-destination-out" class="button flex" value="destination-out"> Destination out </button>
+        <button id="btn-destination-over" class="button flex" value="destination-over"> Destination over </button>
+        <button id="btn-hue" class="button flex" value="hue"> Hue </button>
+        <button id="btn-lighter" class="button flex" value="lighter"> Ligther </button>
+        <button id="btn-multiply" class="button flex"  value="multiply"> Multiply </button>
+        <button id="btn-screen" class="button flex" value="screen"> Screen </button>
+        <button id="btn-source-over" class="button flex" value="source-over"> Source over </button>
+      </div>
+    </div>
+    <canvas id="draw" width="800" height="800"></canvas>
+    <button id="btn-reset"> Reset </button>
+  </div>
 
-<style>
-  html, body {
-    margin: 0;
-  }
-</style>
-
+  <script type="text/javascript" src="app.js"></script>
 </body>
 </html>

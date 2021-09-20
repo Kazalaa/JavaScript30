@@ -1,0 +1,88 @@
+ html, body {
+  margin: 0;
+}
+
+#advice {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 2em;
+  background: linear-gradient(to right, hsl(0, 100%, 50%) 0%, hsl(40, 100%, 50%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#draw{
+  border: 1px solid black;
+}
+#draw:active {
+    cursor: crosshair;
+}
+
+#btn-reset {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 30px;
+  right: 0;
+  margin-right: 30px;
+  display: inline-block;
+  background: linear-gradient(to right, hsl(0, 100%, 50%) 0%, hsl(40, 100%, 50%) 100%);
+  border: none;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button{
+  margin-left: 20px;
+  display: inline-block;
+  background: hsl(40, 100%, 50%);
+  border: none;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.button.active{
+  border: 1px solid hsl(30, 80%, 50%);
+  background-color: white;
+  color: hsl(40, 100%, 50%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 350px 1000px;
+}
+
+.controls {
+  /* margin-bottom: 50px; */
+  /* grid-area: 1, 1, 2,2; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+justify-content: center;
+font-size: 32px;
+margin-bottom:20px ;
+}
