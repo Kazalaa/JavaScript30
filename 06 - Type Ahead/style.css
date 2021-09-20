@@ -1,8 +1,8 @@
 html {
   box-sizing: border-box;
-  background: #ffc600;
-  font-family: 'helvetica neue';
-  font-size: 20px;
+  /* background: #B1865F; */
+background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);  font-size: 20px;
   font-weight: 200;
 }
 
@@ -16,7 +16,7 @@ input {
 }
 
 .search-form {
-  max-width: 400px;
+  max-width: 500px;
   margin: 50px auto;
 }
 
