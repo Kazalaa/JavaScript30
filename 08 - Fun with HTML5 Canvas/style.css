@@ -57,6 +57,7 @@
   text-align: center;
   border-radius: 10px;
   width: 300px;
+  height: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .button.active{
@@ -64,7 +65,9 @@
   background-color: white;
   color: hsl(40, 100%, 50%);
 }
-
+#btn-source-over{
+  margin-bottom: 0px;
+}
 .grid {
   display: grid;
   grid-template-columns: 350px 1000px;
