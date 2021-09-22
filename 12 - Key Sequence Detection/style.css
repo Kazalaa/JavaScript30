@@ -1,0 +1,61 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(ARCADECLASSIC.TTF);
+}
+
+body {
+  /* color: white; */
+  text-align: center;
+  background-image: url('Code-Konami-Nitendo.jpeg');
+  background-position: inherit;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+#scroll-container {
+  border: 3px solid white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.scroll-text {
+  /* animation properties */
+  font-family: myFirstFont;
+  font-size: 24px;
+  color: white;
+  white-space:nowrap;
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  -moz-animation: my-animation 40s linear infinite;
+  -webkit-animation: my-animation 40s linear infinite;
+  animation: my-animation 40s linear infinite;
+}
+.margin {
+  margin-left: 300px;
+}
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}

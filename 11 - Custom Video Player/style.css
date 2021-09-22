@@ -82,6 +82,10 @@ body {
   height: 15px;
 }
 
+.player:hover {
+  cursor: pointer;
+}
+
 .player__controls > * {
   flex: 1;
 }
@@ -101,7 +105,7 @@ body {
   width: 50%;
   background: #ffc600;
   flex: 0;
-  flex-basis: 50%;
+  /* flex-basis: 50%; */
 }
 
 /* unholy css to style input type="range" */
@@ -159,4 +163,23 @@ input[type=range]::-moz-range-thumb {
   border-radius: 50px;
   background: #ffc600;
   cursor: pointer;
+}
+
+.fa-volume-up{
+  color: white;
+  font-size: 18px;
+  display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+}
+.fa-volume-off{
+  color: white;
+  font-size: 18px;
+  display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ranges {
+  display: flex;
 }
