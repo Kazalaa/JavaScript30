@@ -1,20 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>JS Reference VS Copy</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
+<p><em>Psst: have a look at the JavaScript Console</em> 👀
+  <br><em> Little Tips: Refresh to see the array in tables</em>
+</p>
+<img src="search.svg" alt="">
+
 <body>
 
   <script>
     // start with strings, numbers and booleans
+    let age = 100;
+    let age2 = age;
+    console.log('age = 100');
+    console.log('age2 = age');
+    console.log('These are two identical ages: ', age, age2);
+    age = 200;
+    console.log('age = 200');
+    console.log('These are two different ages that started out identical: ', age, age2);
+
+    // let name = 'Wes';
+    // let name2 = name;
+    // console.log(name, name2);
+    // name = 'wesley';
+    // console.log(name, name2);
 
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
-
+    // console.table(players)
     // and we want to make a copy of it.
-
+    const team = players;
+    console.log('These are two identical arrays: ', players, 'players', team, 'team');
+    console.log("But changing the second one also changes the first, it's what we call a reference");
+    console.log('However, using slice, concat, spread, or Array.from eliminates the problem');
     // You might think we can just do something like this:
+    // team[3] = 'Lux';
 
     // however what happens when we update that array?
 
@@ -25,12 +51,21 @@
     // Why? It's because that is an array reference, not an array copy. They both point to the same array!
 
     // So, how do we fix this? We take a copy instead!
+    const team2 = players.slice();
 
     // one way
 
     // or create a new array and concat the old one in
+    const team3 = [].concat(players);
 
     // or use the new ES6 Spread
+    const team4 = [...players];
+    console.log('team = [...players]');
+    team4[3] = 'heeee hawww';
+    console.log('team[3] = heeee hawww')
+    console.log('These is one way to copy an array and change the value without changing the original one :',players, 'players', team4, 'team');
+
+    const team5 = Array.from(players);
 
     // now when we update it, the original one isn't changed
 
@@ -43,14 +78,39 @@
     };
 
     // and think we make a copy:
+    // const captain = person;
+    // captain.number = 99;
 
     // how do we take a copy instead?
+    const cap2 = Object.assign({}, person, { number: 99, age: 12 });
+    console.log('Copying an object is also tricky. But we can use Object.assign to create a 1 level deep copy.');
+
+    console.log("Like this one: ", cap2);
 
     // We will hopefully soon see the object ...spread
+    // const cap3 = {...person};
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+    const wes = {
+      name: 'Wes',
+      age: 100,
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+      }
+    };
+
+    // console.clear();
+    // console.log(wes);
+    console.log('This is a 2 level deep object: ', wes);
+    const dev = Object.assign({}, wes);
+
+    const dev2 = JSON.parse(JSON.stringify(wes));
+
 
   </script>
 
 </body>
+
 </html>
