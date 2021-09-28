@@ -26,10 +26,12 @@ svg {
 }
 
 .wrapper {
+  border-radius: 50px;
   padding: 20px;
-  max-width: 350px;
+  max-width: 450px;
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
 }
 
 h2 {
@@ -75,7 +77,38 @@ h2 {
 }
 
 .add-items input {
-  padding: 10px;
   outline: 0;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 20px 5px;
+  padding: 8px 24px;
+  border-radius: 50px;
+}
+
+.add-items .btn-add{
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 20px 5px;
+}
+.add-items input:hover {
+  opacity: 1;
+}
+
+button{
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  margin: 20px 5px;
+}
+
+button:hover {
+  opacity: 1;
 }
