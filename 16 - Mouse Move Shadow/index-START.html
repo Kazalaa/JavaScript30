@@ -7,7 +7,8 @@
 <body>
 
   <div class="hero">
-    <h1 contenteditable>🔥WOAH!</h1>
+    <h1 contenteditable>🚀</h1>
+    <!-- <img src="ship.png" alt="ship" id="image" contenteditable> -->
   </div>
 
   <style>
@@ -18,6 +19,10 @@
 
   body {
     margin: 0;
+    background-image: url("space.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .hero {
@@ -31,10 +36,45 @@
   h1 {
     text-shadow: 10px 10px 0 rgba(0,0,0,1);
     font-size: 100px;
+    /* transform: rotate(40deg); */
   }
   </style>
 
 <script>
+  const hero = document.querySelector('.hero');
+  const text = hero.querySelector('h1');
+  // const image = document.getElementById('image');
+  const walk = 500; //500px
+  function shadow(e) {
+    // const width = hero.offsetWidth
+    // const height = hero.offsetHeight
+    const { offsetWidth: width, offsetHeight: height } = hero;
+    let { offsetX: x, offsetY: y } = e;
+    // console.log(this, e.target);
+    // we are doing this because when we hover the child, h1, the value of x and y comeback to 0
+    if(this !== e.target) {
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
+    }
+    // value between -50 and 50 :
+    const xWalk = Math.round((x / width * walk) - (walk / 2));
+    const yWalk = Math.round((y / height * walk) - (walk / 2));
+    // console.log(xWalk, yWalk)
+    const angle = Math.atan2(xWalk, yWalk) * (180 / Math.PI) * -1 + 140;
+
+    text.style.textShadow = `
+    ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),
+    ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7),
+    ${yWalk}px ${xWalk * -1}px 0 rgba(0,255,0,0.7),
+    ${yWalk * -1}px ${xWalk}px 0 rgba(0,0,255,0.7)
+    `;
+    text.style.transform = `rotate(${angle}deg)`;
+
+    // image.style.boxShadow = `"${xWalk}px ${yWalk}px 5px blue"`;
+
+  }
+
+  hero.addEventListener('mousemove', shadow);
 </script>
 </body>
 </html>
