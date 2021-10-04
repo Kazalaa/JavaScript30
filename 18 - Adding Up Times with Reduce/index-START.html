@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Videos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1 id="title">
+    Total time of all the videos :
+  </h1>
   <ul class="videos">
     <li data-time="5:43">
       Video 1
@@ -183,6 +187,7 @@
   </ul>
 <script>
   const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
+  const title = document.getElementById('title');
   // console.log(timeNodes);
   const seconds = timeNodes
                   .map(node => node.dataset.time)
@@ -200,6 +205,7 @@
   secondsLeft = secondsLeft % 60;
 
   console.log(hours, mins, secondsLeft);
+  title.insertAdjacentHTML('beforeend', `${hours} h ${mins} min ${secondsLeft} sec`)
 </script>
 </body>
 </html>
