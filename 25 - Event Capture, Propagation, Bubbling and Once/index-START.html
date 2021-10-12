@@ -44,7 +44,7 @@
     }
   </style>
 
-  <button></button>
+  <button>Click this once</button>
   <script>
     const divs = document.querySelectorAll('div');
     const button = document.querySelector('button');
@@ -61,7 +61,8 @@
     }));
 
     button.addEventListener('click', () => {
-      console.log('Click!!!');
+      // console.log('Click!!!');
+      window.alert("It's the last time you see this message, except if you refresh ...");
     }, {
       once: true
     });
