@@ -32,9 +32,43 @@
     <div class="item item23">23</div>
     <div class="item item24">24</div>
     <div class="item item25">25</div>
+    <div class="item item25">26</div>
+    <div class="item item25">27</div>
+
   </div>
 
 <script>
+  const slider = document.querySelector('.items');
+  let isDown = false
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    // e.pageX give the px of the mouse click from the left of the screen. We are doing minus slider.offsetLeft because if we have margin, it's will give us the exact position of the mouse click.
+    startX = e.pageX - slider.offsetLeft
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+
+  slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return; // stop the function from running
+    // console.log(isDown);
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 5
+    slider.scrollLeft = scrollLeft - walk;
+  });
 </script>
 
   </body>
