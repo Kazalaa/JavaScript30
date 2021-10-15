@@ -1,0 +1,36 @@
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  object-fit: cover;
+  width: 250px;
+  height: 150px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+}
+
+.item {
+    margin: 10px;
+    width: 250px;
+    height: 220px;
+    text-align: center;
+    background-color: #f1c40f;
+    box-shadow: 0 0 0 4px rgb(0 0 0 / 10%), 0 0 10px rgb(0 0 0 / 20%);
+}
+
+video {
+  width: 250px;
+}
